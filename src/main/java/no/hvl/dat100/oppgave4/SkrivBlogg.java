@@ -8,9 +8,7 @@ import no.hvl.dat100.oppgave3.*;
 
 public class SkrivBlogg {
 
-	private static String MAPPE = System.getProperty("user.dir") + "/src/no/hvl/dat100/jplab12/tests/";
-
-	public static boolean skriv(Blogg samling, String filnavn) {
+	public static boolean skriv(Blogg samling, String mappe, String filnavn) {
 
 		// Oppretter en boolean som holder styr på om det ble skrevet en fil eller ikke
 		boolean skrevet;

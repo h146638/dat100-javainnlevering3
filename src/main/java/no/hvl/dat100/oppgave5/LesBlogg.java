@@ -17,15 +17,13 @@ import javax.swing.JOptionPane;
 
 public class LesBlogg {
 
-	private static String MAPPE = System.getProperty("user.dir") + "/src/no/hvl/dat100/jplab11/tests/";
-
 	private static String TEKST = "TEKST";
 	private static String BILDE = "BILDE";
 
-	public static Blogg les(String filnavn) {
+	public static Blogg les(String mappe, String filnavn) {
 
 		// oppretter et nytt filobjekt ved hjelp av filnavn og mappestruktur.
-		File fil = new File(MAPPE + filnavn);
+		File fil = new File(mappe + filnavn);
 		// Definerer en blogg objektvariabel.
 		Blogg samling;
 
@@ -36,17 +34,17 @@ public class LesBlogg {
 			// Leser første linje i filen som inneholder antallet innlegg
 			String linje = leser.nextLine();
 			// parser strengen til int.
-			int antallInnlegg = parseInt(linje);
+			int antallInnlegg = Integer.parseInt(linje);
 			// Opretter et nytt bloggobjekt med riktig antall element.
 			samling = new Blogg(antallInnlegg);
 			// Går gjennom en løkke like mange ganger som det er innlegg i filen.
 			for (int i = 0; i < antallInnlegg; i++) {
 				// Leser infoen inn i forskjellige variabler.
 				String type = leser.nextLine();
-				int id = parseInt(leser.nextLine());
+				int id = Integer.parseInt(leser.nextLine());
 				String bruker = leser.nextLine();
 				String dato = leser.nextLine();
-				int likes = parseInt(leser.nextLine());
+				int likes = Integer.parseInt(leser.nextLine());
 				String tekst = leser.nextLine();
 				System.out.println(type + " " + TEKST);
 				// Sjekker hvilken type innlegg det er og opretter et korresponderende objekt.
